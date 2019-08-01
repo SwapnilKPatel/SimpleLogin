@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LoginProject/SignupVC.swift"
-            timestampString = "585812401.803373"
+            timestampString = "586336186.512934"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LoginProject/RestManager.swift"
-            timestampString = "585812401.803461"
+            timestampString = "586336186.5132999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "getHttpBody()"
             landmarkType = "7">
             <Locations>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LoginProject/RestManager.swift"
-            timestampString = "585812401.8038681"
+            timestampString = "586336186.513355"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "getHttpBody()"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LoginProject/RestManager.swift"
-            timestampString = "585812401.804142"
+            timestampString = "586336186.513405"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "getHttpBody()"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LoginProject/RestManager.swift"
-            timestampString = "585812401.804406"
+            timestampString = "586336186.513459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "getHttpBody()"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LoginProject/RestManager.swift"
-            timestampString = "585812401.804643"
+            timestampString = "586336186.513502"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "getHttpBody()"
             landmarkType = "7">
          </BreakpointContent>
@@ -153,13 +153,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LoginProject/RestManager.swift"
-            timestampString = "585812401.804866"
+            filePath = "LoginProject/SignupVC.swift"
+            timestampString = "586336186.513546"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "makeRequest(toURL:prams:withHttpMethod:completion:)"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "didSelect(image:imgUrl:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

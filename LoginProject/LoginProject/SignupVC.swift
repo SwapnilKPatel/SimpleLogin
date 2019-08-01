@@ -80,11 +80,37 @@ class SignupVC: UIViewController {
 //        rest.httpBodyParameters.add(value: "Hello 😀 !!!", forKey: "greeting")
 //        rest.httpBodyParameters.add(value: "AppCoda", forKey: "user")
         
-        upload(files: [imageFileInfo], toURL: URL(string: "http://localhost:3000/upload"))
+      //  upload(files: [imageFileInfo], toURL: URL(string: "https://api.imgur.com/3/image"))
     }
-    
+    func uploadImageNData(url :String, param : [String:String],img : UIImage)
+    {
+   
+        
+        rest.uploadImage(with: url, param: param, image: img){ results in
+            
+            if let error = results.error {
+                print(error)
+            }
+            
+            if let data = results.data {
+                if let toDictionary = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) {
+                    
+                    
+                    
+                    print(toDictionary)
+                }
+            }
+            
+           
+        }
+        
+       
+    }
     func upload(files: [RestManager.FileInfo], toURL url: URL?) {
         if let uploadURL = url {
+            rest.httpBodyParameters.add(value: "name", forKey: "MyTestFile123321")
+            rest.httpBodyParameters.add(value: "description", forKey: "MyTestFile123321")
+                                      
             rest.upload(files: files, toURL: uploadURL, withHttpMethod: .post) { (results, failedFilesList) in
                 print("HTTP status code:", results.response?.httpStatusCode ?? 0)
                 
@@ -149,8 +175,11 @@ class SignupVC: UIViewController {
 extension SignupVC: ImagePickerDelegate {
     func didSelect(image: UIImage?, imgUrl: URL?) {
          self.userImage.image = image
+        let param = ["name": "MyTestFile123321",
+                     "description": "My tutorial test file for MPFD uploads"]
+      //  uploadProfilePic(imgUrl: imgUrl!)
         
-        uploadProfilePic(imgUrl: imgUrl!)
+        uploadImageNData(url: uploadUrl, param: param, img: image!)
     }
     
     

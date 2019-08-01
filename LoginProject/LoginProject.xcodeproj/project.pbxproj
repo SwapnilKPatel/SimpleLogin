@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390B1C5922F2BC3000D4EACD /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390B1C5822F2BC3000D4EACD /* Media.swift */; };
+		390B1C5B22F2C2B600D4EACD /* Constanc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390B1C5A22F2C2B600D4EACD /* Constanc.swift */; };
 		39293BD822E9C9450005B3AF /* UploadImgExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39293BD722E9C9450005B3AF /* UploadImgExample.swift */; };
 		39293BDA22E9C9800005B3AF /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39293BD922E9C9800005B3AF /* RestManager.swift */; };
 		39293BDD22E9D1490005B3AF /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39293BDC22E9D1490005B3AF /* ReviewModel.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		390B1C5822F2BC3000D4EACD /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		390B1C5A22F2C2B600D4EACD /* Constanc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constanc.swift; sourceTree = "<group>"; };
 		39293BD722E9C9450005B3AF /* UploadImgExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImgExample.swift; sourceTree = "<group>"; };
 		39293BD922E9C9800005B3AF /* RestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
 		39293BDC22E9D1490005B3AF /* ReviewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
@@ -55,13 +59,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39293BDB22E9CCE20005B3AF /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		39B75CAF22E993790081B83B = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				39293BDC22E9D1490005B3AF /* ReviewModel.swift */,
-				39293BDB22E9CCE20005B3AF /* New Group */,
 				39293BD922E9C9800005B3AF /* RestManager.swift */,
 				39B75CBB22E993790081B83B /* AppDelegate.swift */,
 				39B75CBD22E993790081B83B /* ViewController.swift */,
@@ -96,6 +92,7 @@
 				39B75CC222E993790081B83B /* Assets.xcassets */,
 				39B75CC422E993790081B83B /* LaunchScreen.storyboard */,
 				39B75CC722E993790081B83B /* Info.plist */,
+				390B1C5A22F2C2B600D4EACD /* Constanc.swift */,
 			);
 			path = LoginProject;
 			sourceTree = "<group>";
@@ -103,6 +100,7 @@
 		39B75CCE22E9939B0081B83B /* Help */ = {
 			isa = PBXGroup;
 			children = (
+				390B1C5822F2BC3000D4EACD /* Media.swift */,
 				39B75CE222E9AF430081B83B /* UITextFieldExt.swift */,
 				39B75CE422E9B4160081B83B /* AlertView.swift */,
 				39293BD722E9C9450005B3AF /* UploadImgExample.swift */,
@@ -183,7 +181,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				390B1C5922F2BC3000D4EACD /* Media.swift in Sources */,
 				39293BDA22E9C9800005B3AF /* RestManager.swift in Sources */,
+				390B1C5B22F2C2B600D4EACD /* Constanc.swift in Sources */,
 				39B75CBE22E993790081B83B /* ViewController.swift in Sources */,
 				39B75CDE22E994050081B83B /* MainVC.swift in Sources */,
 				39B75CE722E9C3EC0081B83B /* ImagePicker.swift in Sources */,

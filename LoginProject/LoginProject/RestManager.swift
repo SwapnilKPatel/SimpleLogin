@@ -7,7 +7,8 @@
 //
 
 import Foundation
-
+ import UIKit
+typealias Parameters = [String: String]
 class RestManager {
     
     // MARK: - Properties
@@ -72,6 +73,7 @@ class RestManager {
             let targetURL = self?.addURLQueryParameters(toURL: url)
             guard let boundary = self?.createBoundary() else { completion(Results(withError: CustomError.failedToCreateBoundary), nil); return }
             self?.requestHttpHeaders.add(value: "multipart/form-data; boundary=\(boundary)", forKey: "content-type")
+            self?.requestHttpHeaders.add(value:"Client-ID f65203f7020dddc", forKey: "Authorization")
             
             guard var body = self?.getHttpBody(withBoundary: boundary) else { completion(Results(withError: CustomError.failedToCreateHttpBody), nil); return }
             let failedFilenames = self?.add(files: files, toBody: &body, withBoundary: boundary)
@@ -89,6 +91,80 @@ class RestManager {
             })
             task.resume()
         }
+    }
+   
+    
+    func uploadImage(with url : String, param : [String: String], image : UIImage ,completion: @escaping (_ result: Results) -> Void) {
+    
+            let parameters = param
+        
+            guard let mediaImage = Media(withImage: image, forKey: "image") else { return }
+        
+            guard let url = URL(string: url) else { return }
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+        
+            let boundary = generateBoundary()
+        
+            request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+            request.addValue("Client-ID f65203f7020dddc", forHTTPHeaderField: "Authorization")
+        
+            let dataBody = createDataBody(withParameters: parameters, media: [mediaImage], boundary: boundary)
+            request.httpBody = dataBody
+        
+            let session = URLSession.shared
+        session.dataTask(with: request){ (data, response, error) in
+            completion(Results(withData: data,
+                               response: Response(fromURLResponse: response),
+                               error: error))
+            }.resume()
+    }
+                //{ (data, response, error) in
+//            if let response = response {
+//            print(response)
+//            }
+//
+//            if let data = data {
+//            do {
+//            let json = try JSONSerialization.jsonObject(with: data, options: [])
+//            print(json)
+//            } catch {
+//            print(error)
+//            }
+//            }
+//            }.resume()
+  
+    
+    func generateBoundary() -> String {
+        return "Boundary-\(NSUUID().uuidString)"
+    }
+    
+    func createDataBody(withParameters params: Parameters?, media: [Media]?, boundary: String) -> Data {
+        
+        let lineBreak = "\r\n"
+        var body = Data()
+        
+        if let parameters = params {
+            for (key, value) in parameters {
+                body.append("--\(boundary + lineBreak)")
+                body.append("Content-Disposition: form-data; name=\"\(key)\"\(lineBreak + lineBreak)")
+                body.append("\(value + lineBreak)")
+            }
+        }
+        
+        if let media = media {
+            for photo in media {
+                body.append("--\(boundary + lineBreak)")
+                body.append("Content-Disposition: form-data; name=\"\(photo.key)\"; filename=\"\(photo.filename)\"\(lineBreak)")
+                body.append("Content-Type: \(photo.mimeType + lineBreak + lineBreak)")
+                body.append(photo.data)
+                body.append(lineBreak)
+            }
+        }
+        
+        body.append("--\(boundary)--\(lineBreak)")
+        
+        return body
     }
     
     
@@ -295,7 +371,7 @@ extension RestManager {
     }
     
     
-    private func getHttpBody(withBoundary boundary: String) -> Data {
+    private func getHttpBody(withBoundary boundary: String ) -> Data {
         var body = Data()
         
         for (key, value) in httpBodyParameters.allValues() {
@@ -353,6 +429,15 @@ extension RestManager {
     }
 }
 
+extension Data {
+    mutating func append(_ string: String) {
+        if let data = string.data(using: .utf8) {
+            append(data)
+        }
+    }
+}
+
+
 
 
 // MARK: - Data Extension
@@ -382,3 +467,4 @@ extension Data {
         return status
     }
 }
+
